@@ -2,39 +2,47 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Cưới Minh Quân & Thu Hà</title>
-    <!-- Google Fonts cho chữ đẹp -->
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>Demo Thiệp Cưới Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfaf6; color: #4a6741; text-align: center; overflow-x: hidden; }
+        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; color: #4a6741; }
         
-        /* Cấu hình hoa văn */
-        .flower-decor { width: 150px; position: absolute; z-index: 1; }
-        .top-left { top: 0; left: 0; }
-        .bottom-right { bottom: 0; right: 0; transform: rotate(180deg); }
+        /* Khung thiệp */
+        .card { 
+            width: 350px; background: white; padding: 40px; border: 1px solid #e0d8c3;
+            text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
 
-        .container { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+        /* Họa tiết vẽ bằng CSS (thay vì dùng ảnh) */
+        .ornament { position: absolute; width: 60px; height: 60px; border: 2px solid #c5a47e; }
+        .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+        /* Khung ảnh */
+        .photo-circle { width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; border: 3px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); overflow: hidden; }
         
-        h1 { font-family: 'Pattaya', sans-serif; font-size: 3rem; margin: 10px 0; }
-        .date { font-size: 1.5rem; border-top: 1px solid #4a6741; border-bottom: 1px solid #4a6741; padding: 10px 20px; display: inline-block; }
+        h1 { font-family: 'Pattaya', sans-serif; font-size: 2.2rem; margin: 10px 0; color: #3a5a40; }
+        .date { font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px; }
         
-        /* Hiệu ứng mờ dần */
-        .content { animation: fadeIn 2s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Hiệu ứng chuyển động */
+        .fade-in { animation: fadeIn 2s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body>
+<body class="fade-in">
 
-    <!-- Hoa văn trang trí (Thay link ảnh của bạn vào đây) -->
-    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower-decor top-left">
-    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower-decor bottom-right">
+    <div class="card">
+        <div class="ornament top-left"></div>
+        <div class="ornament bottom-right"></div>
 
-    <div class="container content">
+        <div class="photo-circle">
+            <div style="background:#ddd; height:100%; display:flex; align-items:center; justify-content:center;">Ảnh cưới</div>
+        </div>
+
         <p>Trân trọng kính mời</p>
         <h1>Minh Quân & Thu Hà</h1>
-        <div class="date">24 tháng 5, 2026</div>
-        <p style="margin-top: 20px;">Chúng mình rất mong sự hiện diện của bạn!</p>
+        <div class="date">24.05.2026</div>
+        <p style="font-size: 0.8rem; margin-top: 20px;">Chúng mình rất hạnh phúc khi có bạn tham dự</p>
     </div>
 
 </body>
