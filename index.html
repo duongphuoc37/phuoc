@@ -2,48 +2,63 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Demo Thiệp Cưới Cao Cấp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Cưới Minh Quân & Thu Hà</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <!-- Thư viện hiệu ứng AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; color: #4a6741; }
+        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; color: #4a6741; overflow-x: hidden; }
         
-        /* Khung thiệp */
-        .card { 
-            width: 350px; background: white; padding: 40px; border: 1px solid #e0d8c3;
-            text-align: center; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Họa tiết vẽ bằng CSS (thay vì dùng ảnh) */
-        .ornament { position: absolute; width: 60px; height: 60px; border: 2px solid #c5a47e; }
-        .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-        .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
-
-        /* Khung ảnh */
-        .photo-circle { width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; border: 3px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); overflow: hidden; }
+        /* Hiệu ứng Fullscreen Section */
+        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
         
-        h1 { font-family: 'Pattaya', sans-serif; font-size: 2.2rem; margin: 10px 0; color: #3a5a40; }
-        .date { font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px; }
+        h1 { font-family: 'Pattaya', sans-serif; font-size: 3.5rem; margin: 10px 0; }
+        .divider { width: 60px; height: 1px; background: #4a6741; margin: 20px auto; }
         
-        /* Hiệu ứng chuyển động */
-        .fade-in { animation: fadeIn 2s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Hoa văn trang trí */
+        .flower { width: 150px; position: absolute; z-index: 1; }
+        .top-left { top: 20px; left: 20px; }
+        .bottom-right { bottom: 20px; right: 20px; transform: rotate(180deg); }
+        
+        /* Nút nhạc */
+        #music-btn { position: fixed; bottom: 30px; right: 30px; z-index: 100; cursor: pointer; background: #4a6741; color: white; border: none; padding: 10px 15px; border-radius: 50px; }
     </style>
 </head>
-<body class="fade-in">
+<body>
 
-    <div class="card">
-        <div class="ornament top-left"></div>
-        <div class="ornament bottom-right"></div>
+    <!-- Hoa văn -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower top-left">
+    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower bottom-right">
 
-        <div class="photo-circle">
-            <div style="background:#ddd; height:100%; display:flex; align-items:center; justify-content:center;">Ảnh cưới</div>
-        </div>
-
+    <!-- Section 1: Trang bìa -->
+    <div class="section" data-aos="fade-in" data-aos-duration="2000">
         <p>Trân trọng kính mời</p>
         <h1>Minh Quân & Thu Hà</h1>
-        <div class="date">24.05.2026</div>
-        <p style="font-size: 0.8rem; margin-top: 20px;">Chúng mình rất hạnh phúc khi có bạn tham dự</p>
+        <div class="divider"></div>
+        <p>24.05.2026</p>
     </div>
 
+    <!-- Section 2: Thông tin chi tiết -->
+    <div class="section" data-aos="fade-up" data-aos-duration="1500">
+        <h2>Địa điểm</h2>
+        <p>Nhà hàng Tiệc cưới Sang trọng<br>Số 1, Đường Hạnh Phúc, Hà Nội</p>
+    </div>
+
+    <button id="music-btn" onclick="playMusic()">🎵 Bật nhạc</button>
+    <audio id="myAudio" loop><source src="https://www.w3schools.com/howto/movie.mp3" type="audio/mpeg"></audio>
+
+    <!-- Kích hoạt hiệu ứng -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        function playMusic() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+            document.getElementById("music-btn").style.display = "none";
+        }
+    </script>
 </body>
 </html>
