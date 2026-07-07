@@ -3,62 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Cưới Minh Quân & Thu Hà</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
-    <!-- Thư viện hiệu ứng AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <title>Thiệp Cưới Sang Trọng</title>
+    <!-- Font chữ chuẩn thiệp cưới -->
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; color: #4a6741; overflow-x: hidden; }
+        /* Reset cơ bản */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fdfaf6; font-family: 'Lora', serif; color: #4a6741; overflow-x: hidden; }
+
+        /* Khung thiệp */
+        .page { height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+
+        /* Hoa văn ở góc (Đây là thứ tạo nên hồn bản gốc) */
+        .flower-tl { position: absolute; top: 30px; left: 30px; width: 150px; opacity: 0.8; }
+        .flower-br { position: absolute; bottom: 30px; right: 30px; width: 150px; opacity: 0.8; transform: rotate(180deg); }
+
+        /* Tên cô dâu chú rể */
+        .names { font-family: 'Pattaya', sans-serif; font-size: 3.5rem; margin: 20px 0; }
         
-        /* Hiệu ứng Fullscreen Section */
-        .section { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        /* Hiệu ứng mờ dần */
+        .fade-in { animation: fadeIn 2.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         
-        h1 { font-family: 'Pattaya', sans-serif; font-size: 3.5rem; margin: 10px 0; }
-        .divider { width: 60px; height: 1px; background: #4a6741; margin: 20px auto; }
-        
-        /* Hoa văn trang trí */
-        .flower { width: 150px; position: absolute; z-index: 1; }
-        .top-left { top: 20px; left: 20px; }
-        .bottom-right { bottom: 20px; right: 20px; transform: rotate(180deg); }
-        
-        /* Nút nhạc */
-        #music-btn { position: fixed; bottom: 30px; right: 30px; z-index: 100; cursor: pointer; background: #4a6741; color: white; border: none; padding: 10px 15px; border-radius: 50px; }
+        .divider { width: 40px; height: 1px; background: #4a6741; margin: 10px 0; }
     </style>
 </head>
 <body>
 
-    <!-- Hoa văn -->
-    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower top-left">
-    <img src="https://cdn-icons-png.flaticon.com/512/3673/3673012.png" class="flower bottom-right">
+    <!-- Hoa văn gốc (Thay link ảnh hoa văn bạn tải về vào đây) -->
+    <img src="https://chungdoi.com/images/themes/boho-floral-green/flower.webp" class="flower-tl">
+    <img src="https://chungdoi.com/images/themes/boho-floral-green/flower.webp" class="flower-br">
 
-    <!-- Section 1: Trang bìa -->
-    <div class="section" data-aos="fade-in" data-aos-duration="2000">
+    <div class="page fade-in">
         <p>Trân trọng kính mời</p>
-        <h1>Minh Quân & Thu Hà</h1>
+        <div class="names">Minh Quân & Thu Hà</div>
         <div class="divider"></div>
-        <p>24.05.2026</p>
+        <p>24 tháng 5, 2026</p>
     </div>
 
-    <!-- Section 2: Thông tin chi tiết -->
-    <div class="section" data-aos="fade-up" data-aos-duration="1500">
-        <h2>Địa điểm</h2>
-        <p>Nhà hàng Tiệc cưới Sang trọng<br>Số 1, Đường Hạnh Phúc, Hà Nội</p>
-    </div>
-
-    <button id="music-btn" onclick="playMusic()">🎵 Bật nhạc</button>
-    <audio id="myAudio" loop><source src="https://www.w3schools.com/howto/movie.mp3" type="audio/mpeg"></audio>
-
-    <!-- Kích hoạt hiệu ứng -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-        function playMusic() {
-            var audio = document.getElementById("myAudio");
-            audio.play();
-            document.getElementById("music-btn").style.display = "none";
-        }
-    </script>
 </body>
 </html>
